@@ -1,0 +1,74 @@
+\documentclass[12pt]{article} %{{{
+
+% Figures
+\usepackage{graphicx}
+\setlength{\figwidth}{0.5\linewidth} 
+\def\figdir{figs}
+
+% Math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\DeclareMathOperator*{\argmax}{\arg\!\max}
+
+% abbreviations
+\def\etal{et~al.\_}
+\def\eg{e.g.,~}
+\def\ie{i.e.,~}
+\def\cf{cf.~}
+\def\viz{viz.~}
+\def\vs{vs.~}
+
+% Refs
+\usepackage{biblatex}
+\addbibresource{main.bib}
+
+\usepackage{url}
+
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\figref}[1]{Fig.~\ref{fig:#1}}
+\newcommand{\tabref}[1]{Table~\ref{tab:#1}}
+%\newcommand{\eqnref}[1]{\eqref{eq:#1}}
+%\newcommand{\thmref}[1]{Theorem~\ref{#1}}
+%\newcommand{\prgref}[1]{Program~\ref{#1}}
+%\newcommand{\algref}[1]{Algorithm~\ref{#1}}
+%\newcommand{\clmref}[1]{Claim~\ref{#1}}
+%\newcommand{\lemref}[1]{Lemma~\ref{#1}}
+%\newcommand{\ptyref}[1]{Property~\ref{#1}}
+
+% for quick author comments 
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\definecolor{light-gray}{gray}{0.8}
+\def\del#1{ {\color{light-gray}{#1}} }
+\def\yy#1{\footnote{\color{red}\textbf{yy: #1}} }
+
+%}}}
+
+\begin{document} %{{{
+
+\title{An awesome paper} %{{{
+\date{\today}
+\maketitle %}}}
+
+\section{Introduction} %{{{
+\label{sec:introduction}
+
+%}}}
+
+\section{Results} %{{{
+\label{sec:results}
+
+%\begin{minipage}{\figwidth} 
+%\includegraphics[width=\linewidth]{\figdir/img} 
+%\end{minipage}
+
+%}}}
+
+\section{Methods} %{{{
+\label{sec:methods}
+
+%}}}
+
+\printbibliography
+    
+\end{document} %}}}

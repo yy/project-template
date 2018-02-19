@@ -1,0 +1,12 @@
+rule targets:
+    input:
+        "plots/dataset1.pdf",
+        "plots/dataset2.pdf"
+
+rule plot:
+    input:
+        "raw/{dataset}.csv"
+    output:
+        "plots/{dataset}.pdf"
+    shell:
+        "somecommand {input} {output}"
