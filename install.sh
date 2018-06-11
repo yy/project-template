@@ -1,4 +1,4 @@
-cp -R ./lib $1
+cp -R ./libs $1
 cp -R ./data $1
 cp -R ./exps $1
 cp -R ./paper $1
