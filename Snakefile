@@ -1,13 +1,12 @@
 from os.path import join as j
 
-# configfile: "workflow/config.yaml"
+configfile: "workflow/config.yaml"
 
-CURR_PAPER_DIR = "paper/current/"
+DATA_DIR = config["data_dir"]
 
-PAPER_SRC = j(CURR_PAPER_DIR, "main.tex")
-PAPER = j(CURR_PAPER_DIR, "main.pdf")
-SUPP_SRC = j(CURR_PAPER_DIR, "supp.tex")
-SUPP = j(CURR_PAPER_DIR, "supp.pdf")
+PAPER_DIR = config["paper_dir"]
+PAPER_SRC, SUPP_SRC = [j(PAPER_DIR, f) for f in ("main.tex", "supp.tex")]
+PAPER, SUPP = [j(PAPER_DIR, f) for f in ("main.pdf", "supp.pdf")]
 
 rule all:
     input:
@@ -17,7 +16,7 @@ rule paper:
     input:
         PAPER_SRC, SUPP_SRC
     params:
-        paper_dir = CURR_PAPER_DIR
+        paper_dir = PAPER_DIR
     output:
         PAPER, SUPP
     shell:
