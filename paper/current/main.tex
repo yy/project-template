@@ -1,8 +1,9 @@
 \documentclass[12pt]{article} %{{{
+\usepackage[margin=1in]{geometry}
 
 % Figures
 \usepackage{graphicx}
-\def\figdir{figs}
+\graphicspath{{../../figs/}}
 
 % Math
 \usepackage{amsmath}
@@ -11,7 +12,6 @@
 \DeclareMathOperator*{\argmax}{\arg\!\max}
 
 % abbreviations
-\def\etal{\emph{et~al}.\ }
 \def\eg{e.g.,~}
 \def\ie{i.e.,~}
 \def\cf{cf.\ }
@@ -56,9 +56,6 @@
 
 \section{Results}\label{sec:results} %{{{ 
 
-%\begin{minipage}{\figwidth} 
-%\includegraphics[width=\linewidth]{\figdir/img} 
-%\end{minipage}
 
 %}}}
 
