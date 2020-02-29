@@ -25,7 +25,7 @@ This script creates
 
 First create a virtual environment for the project.
 
-    conda create -n project_env_name
+    conda create -n project_env_name python=3.7
     conda activate project_env_name
 
 Install `ipykernel` for Jupyter and `snakemake` for workflow management. 

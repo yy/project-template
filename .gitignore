@@ -30,6 +30,9 @@ supp.pdf
 # Jupyter
 .ipynb_checkpoints/
 
+# Snakemake
+.snakemake
+
 # Others
 .DS_Store
 *.un~
