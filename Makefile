@@ -1,4 +1,10 @@
-.PHONY: test create_env build_env 
+.PHONY: test create_env build_env all report
+
+all:
+	snakemake --cores all
+
+report:
+	snakemake --report report.html
 
 test:
 	pytest
