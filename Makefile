@@ -1,4 +1,7 @@
-.PHONY: test create_env build_env all report
+PROJ_NAME=PROJ_NAME
+
+.PHONY: all test create_conda_env build_conda_env report create_env create_ipykernel
+
 
 all:
 	snakemake --cores all
@@ -9,8 +12,17 @@ report:
 test:
 	pytest
 
-create_env:
-	conda create -n $(shell basename $(CURDIR)) -c bioconda -c conda-forge python=3.7 ipykernel snakemake
+create_conda_env:
+	conda create -n $(PROJ_NAME) -c bioconda -c conda-forge python=3.8 snakemake jupyterlab pandas nb_conda black isort flake8 pytest neovim
 
-build_env:
+export_conda_env:
+	conda env export > environment.yml
+
+build_conda_env:
 	conda env create -f environment.yml
+
+create_env:
+	virtualenv $(PROJ_NAME)_env
+
+create_ipykernel:
+	python -m ipykernel install --user --name=$(PROJ_NAME)
