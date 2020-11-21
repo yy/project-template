@@ -82,4 +82,10 @@ or deactivate it with
 conda deactivate
 ```
 
-Use `conda install` to install packages. Thanks to `nb_conda` package, you don't need to individually install `ipykernel` for Jupyter. 
+Use `conda install` to install packages.  For the project package, use `pip
+install -e` command to install it as an "editable" package that does not
+require reinstallation after changes. 
+
+Thanks to `nb_conda` package, you don't need to individually install
+`ipykernel` for Jupyter. 
+
