@@ -30,7 +30,7 @@ This script creates the following folders and files.
 
 ## Using Python virtual environment
 
-Change the `PROJ_NAME` variable in `Makefile` to your project name. 
+Change the `PROJ_NAME` variable in `Makefile` to your project name. Then create a virtual environment either with Python's vanilla `virtualenv` module or with [Anaconda](https://www.anaconda.com/).
 
 ### with virtualenv
 
@@ -43,7 +43,7 @@ make create_env
 You can activate the virtual environment by running 
 
 ```
-source PROJNAME_env/bin/activate
+source PROJNAME-env/bin/activate
 ```
 
 and deactivate by 
@@ -55,13 +55,12 @@ deactivate
 After activating the virtual environment, you can run 
 
 ```
+pip3 install -r requirements.txt
 make create_ipykernel
 ```
 
-to create the `ipykernel` for Jupyter. Use `pip` to install packages. For the
-project package, use `pip install -e` command to install it as an "editable"
-package that does not require reinstallation after changes. 
-
+to install basic packages and create the `ipykernel` for Jupyter. Use `pip` to
+install packages. 
 
 ### Anaconda
 
@@ -83,10 +82,11 @@ or deactivate it with
 conda deactivate
 ```
 
-Use `conda install` to install packages.  For the project package, use `pip
-install -e` command to install it as an "editable" package that does not
-require reinstallation after changes. 
+Use `conda install` to install packages. Thanks to `nb_conda` package, you
+don't need to individually install `ipykernel` for Jupyter. 
 
-Thanks to `nb_conda` package, you don't need to individually install
-`ipykernel` for Jupyter. 
+## Using a project package 
+
+For the project package, use `pip install -e` command to install it as an
+"editable" package that does not require reinstallation after changes. 
 

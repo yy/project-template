@@ -25,7 +25,7 @@ build_conda_env:
 	conda env create -f environment.yml
 
 create_env:
-	virtualenv $(PROJ_NAME)_env
+	python3 -m venv $(PROJ_NAME)-env
 
 create_ipykernel:
-	python -m ipykernel install --user --name=$(PROJ_NAME)
+	python3 -m ipykernel install --user --name=$(PROJ_NAME)
