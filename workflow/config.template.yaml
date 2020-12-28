@@ -1,3 +1,2 @@
 # set the directories below and copy this file as `config.yaml`
-data_dir: "data/"
-paper_dir: "paper/current/"
+data_dir: "../data/"

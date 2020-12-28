@@ -1,0 +1,22 @@
+from os.path import join as pjoin
+
+# You can use config file to set various variables including parameters.
+# configfile: "config.yaml"
+
+DATA_DIR = "../data/"
+RAW_DATA_DIR = pjoin(DATA_DIR, "raw")
+DERIVED_DATA_DIR = pjoin(DATA_DIR, "derived")
+
+"""
+rule all:
+    input:
+        FIG1
+
+rule figure1:
+    input:
+        SOME_DATASET
+    output:
+        FIG1
+    shell:
+        "python scripts/plot_fig1.py {input} {output}"
+"""

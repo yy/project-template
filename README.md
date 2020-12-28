@@ -20,11 +20,12 @@ For instance,
 
 This script creates the following folders and files. 
 
-1. `libs` for librares for the project.
 1. `data` for raw & derived datasets. 
 1. `exps` for (timestamped) experiment notebooks.
+1. `libs` for librares for the project.
 1. `paper` for manuscripts.
-1. `workflow` for workflow scripts.
+1. `results` for results (figures, tables, etc.)
+1. `workflow` for workflow files and scripts.
 1. `.gitignore` for temporary and binary files to be ignored by git (LaTeX, Python, Jupyter, data files, etc.)
 
 ## Using Python virtual environment

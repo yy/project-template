@@ -1,19 +1,22 @@
 PROJ_NAME=PROJ_NAME
 
-.PHONY: all test create_conda_env build_conda_env report create_env create_ipykernel
+.PHONY: all dryrun test create_conda_env build_conda_env report create_env create_ipykernel
 
 
 all:
-	snakemake --cores all
+	snakemake --cores all -r -p 
 
-report:
-	snakemake --report report.html
+dryrun:
+	snakemake -n -r -p
+
+dag.svg: workflow/Snakefile
+	snakemake --dag | dot -Tsvg > dag.svg
 
 test:
 	pytest
 
 create_conda_env:
-	conda create -n $(PROJ_NAME) -c bioconda -c conda-forge python=3.8 snakemake jupyterlab pandas nb_conda black isort flake8 pytest neovim
+	conda create -n $(PROJ_NAME) -c bioconda -c conda-forge python=3.8 snakemake jupyterlab pandas nb_conda black isort flake8 pytest neovim snakefmt
 
 export_conda_env:
 	conda env export > environment.yml
