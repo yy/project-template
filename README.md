@@ -33,34 +33,39 @@ Change the `PROJ_NAME` variable in `Makefile` to your project name.
 Then create a virtual environment either with Python's vanilla `virtualenv` module or with [Anaconda](https://www.anaconda.com/).
 You can also use tools like `poetry`. 
 
-### with virtualenv
+`.envrc` allows automatic activation of virtual environment. See [direnv](https://yyiki.org/search/Software/direnv). 
 
-Running the following will create a virtual environment inside `PROJNAME_env` directory:
+### with `uv`
 
-```
-make create_env
-```
+Create a virtual environment in the current directory (inside `.venv`). 
 
-You can activate the virtual environment by running 
-
-```
-source PROJNAME-env/bin/activate
+```sh
+uv venv
+source .venv/bin/activate
 ```
 
-and deactivate by 
+Create a `requirements.in` file that lists high-level package requirements. For instance, 
 
-```
-deactivate
+```sh
+pandas
+matplotlib
+jupyter
+
+# local libraries
+-e ./libs/xxxx
 ```
 
-After activating the virtual environment, you can run 
+Install them directly or create a lock file first (note that this lock file is platform-specific and may not translate into other systems) and then install it. 
 
+```sh
+uv pip install -r requirements.in
 ```
-pip3 install -r requirements.txt
-make create_ipykernel
+
+```sh
+uv pip compile requirements.in -o requirements.txt
+uv pip install -r requirements.txt
 ```
-to install basic packages and create the `ipykernel` for Jupyter. Use `pip` to
-install packages. 
+
 
 ### Anaconda
 
