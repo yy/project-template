@@ -2,6 +2,20 @@
 
 A simple template for research project repos. You can also use [data science and reproducible science cookie cutters](https://github.com/audreyr/cookiecutter#data-science).
 
+## Project structure
+
+This template contains the following folders and files. See `README.md` in each folder for more details and guidelines.
+
+1. `data` for raw & derived datasets. 
+1. `libs` for libraries for the project.
+1. `models` for trained models.
+1. `notebooks` for (timestamped) experiment notebooks.
+1. `paper` for manuscripts.
+1. `results` for results (figures, tables, etc.)
+1. `workflow` for workflow files and scripts.
+1. `.gitignore` for temporary and binary files to be ignored by git (LaTeX, Python, Jupyter, data files, etc.)
+
+
 ## Installation
 
 Run the following
@@ -18,14 +32,6 @@ For instance,
 
 This script creates the following folders and files. 
 
-1. `data` for raw & derived datasets. 
-1. `libs` for librares for the project.
-1. `models` for trained models.
-1. `notebooks` for (timestamped) experiment notebooks.
-1. `paper` for manuscripts.
-1. `results` for results (figures, tables, etc.)
-1. `workflow` for workflow files and scripts.
-1. `.gitignore` for temporary and binary files to be ignored by git (LaTeX, Python, Jupyter, data files, etc.)
 
 ## Using Python virtual environment
 
