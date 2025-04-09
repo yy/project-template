@@ -54,9 +54,8 @@ Update this document to store detailed documentation (data dictionary) on the da
 
 The first point is to ensure the most basic data provenance. Imagine receiving a fabricated dataset from a collaborator. Good luck figuring out when and how the misconduct happened without any documentation or saved versions! 
 
-Way too often, we _guess_ 
+Way too often, we have to _guess_ what each column means and how they were collected. This is a recipe for disaster. A dataset without documentation is a ticking time bomb and you should treat them as unusable.
 
 Whenever possible, make sure that the raw data files are versioned and **read-only**. 
-
 
 
