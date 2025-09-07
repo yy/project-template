@@ -23,7 +23,7 @@ Use `uv` to create a virtual environment.
 uv venv
 ```
 
-`.envrc` allows automatic activation of virtual environment. See [direnv](https://yyiki.org/search/Software/direnv).
+`.envrc` allows automatic activation of virtual environment. See [direnv](https://yyahn.com/wiki/Software/direnv/).
 
 Create `pyproject.toml` file and add necessary packages.
 
