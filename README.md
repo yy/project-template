@@ -6,7 +6,7 @@ A simple template for research project repos. You can also use [data science and
 
 This template contains the following folders and files. See `README.md` in each folder for more details and guidelines.
 
-1. `data` for raw & derived datasets. 
+1. `data` for raw & derived datasets.
 1. `libs` for libraries for the project.
 1. `models` for trained models.
 1. `notebooks` for (timestamped) experiment notebooks.
@@ -15,89 +15,31 @@ This template contains the following folders and files. See `README.md` in each 
 1. `workflow` for workflow files and scripts.
 1. `.gitignore` for temporary and binary files to be ignored by git (LaTeX, Python, Jupyter, data files, etc.)
 
-
-## Installation
-
-Run the following
-
-```
-./install.sh PATH_TO_YOUR_PROJECT_REPO
-```
-
-For instance, 
-
-```
-./install.sh ../my_project/
-```
-
-This script creates the following folders and files. 
-
-
 ## Using Python virtual environment
 
-Change the `PROJ_NAME` variable in `Makefile` to your project name. 
-Then create a virtual environment either with Python's vanilla `virtualenv` module or with [Anaconda](https://www.anaconda.com/).
-You can also use tools like `poetry`. 
-
-`.envrc` allows automatic activation of virtual environment. See [direnv](https://yyiki.org/search/Software/direnv). 
-
-### with `uv`
-
-Create a virtual environment in the current directory (inside `.venv`). 
+Use `uv` to create a virtual environment.
 
 ```sh
 uv venv
-source .venv/bin/activate
 ```
 
-Create a `requirements.in` file that lists high-level package requirements. For instance, 
+`.envrc` allows automatic activation of virtual environment. See [direnv](https://yyiki.org/search/Software/direnv).
+
+Create `pyproject.toml` file and add necessary packages.
 
 ```sh
-pandas
-matplotlib
-jupyter
-
-# local libraries
--e ./libs/xxxx
+uv init
+uv add PACKAGE_NAME
 ```
 
-Install them directly or create a lock file first (note that this lock file is platform-specific and may not translate into other systems) and then install it. 
+Once `pyproject.toml` file is created, you can use `uv sync` to synchronize the virtual environment.
 
 ```sh
-uv pip install -r requirements.in
+uv sync
 ```
+
+If you want to add the local project package and keep it editable, use `uv add -e` command.
 
 ```sh
-uv pip compile requirements.in -o requirements.txt
-uv pip install -r requirements.txt
+uv add . --editable
 ```
-
-
-### Anaconda
-
-First create a virtual environment for the project.
-
-```
-make create_conda_env
-```
-
-and activate it with
-
-```
-conda activate PROJNAME
-```
-
-or deactivate it with
-
-```
-conda deactivate
-```
-
-Use `conda install` to install packages. Thanks to `nb_conda` package, you
-don't need to individually install `ipykernel` for Jupyter. 
-
-## Using a project package 
-
-For the project package, use `pip install -e` command to install it as an
-_"editable"_ package that does not require reinstallation after changes. 
-
