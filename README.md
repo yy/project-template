@@ -46,3 +46,30 @@ See [Python environment setup](https://yyahn.com/wiki/Python/Environment%20setup
 ## Linting and formatting
 
 [ruff](https://docs.astral.sh/ruff/) is included as a dev dependency. VS Code settings (`.vscode/settings.json`) enable format on save.
+
+### Pre-commit hooks
+
+Install hooks to auto-run ruff and tests before commits:
+
+```sh
+uv add --dev pre-commit
+uv run pre-commit install
+```
+
+## For AI coding agents
+
+Use the following instructions to initialize. 
+
+Commands:
+- `uv sync` — install dependencies
+- `uv run pytest` — run tests
+- `uv run ruff check .` — lint
+- `uv run ruff format .` — format
+- `make all` — run Snakemake pipeline
+
+Conventions:
+- Write clean code accompanied by well-designed tests. 
+- Use type hints for all function signatures. 
+- Import project code as `from project_name import ...`. 
+- Put reusable code in `src/`, not in notebooks or workflow scripts. 
+- Timestamp experiment folders: `YYYYMMDD_description`. 
