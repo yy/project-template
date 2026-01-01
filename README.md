@@ -6,8 +6,10 @@ A simple template for research project repos. You can also use [data science and
 
 This template contains the following folders and files. See `README.md` in each folder for more details and guidelines.
 
+1. `src` for project source code (installed as editable package).
+1. `tests` for unit tests.
 1. `data` for raw & derived datasets.
-1. `libs` for libraries for the project.
+1. `libs` for third-party or vendored packages.
 1. `models` for trained models.
 1. `notebooks` for (timestamped) experiment notebooks.
 1. `paper` for manuscripts.
