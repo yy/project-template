@@ -34,6 +34,9 @@ supp.pdf
 .snakemake
 workflow/config.yaml
 
+# Virtual environment
+.venv/
+
 # Others
 .DS_Store
 *.un~

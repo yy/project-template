@@ -15,31 +15,32 @@ This template contains the following folders and files. See `README.md` in each 
 1. `workflow` for workflow files and scripts.
 1. `.gitignore` for temporary and binary files to be ignored by git (LaTeX, Python, Jupyter, data files, etc.)
 
-## Using Python virtual environment
+## Python environment
 
-Use `uv` to create a virtual environment.
-
-```sh
-uv venv
-```
-
-`.envrc` allows automatic activation of virtual environment. See [direnv](https://yyahn.com/wiki/Software/direnv/).
-
-Create `pyproject.toml` file and add necessary packages.
+This template uses [uv](https://docs.astral.sh/uv/) for Python environment management. Run the setup script for initial configuration:
 
 ```sh
-uv init
-uv add PACKAGE_NAME
+./setup.sh          # Install dependencies and configure environment
 ```
 
-Once `pyproject.toml` file is created, you can use `uv sync` to synchronize the virtual environment.
+### Key files
+
+- `.python-version` — specifies the required Python release
+- `.venv/` — virtual environment directory (created by uv)
+- `pyproject.toml` — project metadata and dependency declarations
+- `uv.lock` — reproducible dependency snapshot (commit to version control)
+- `.envrc` — [direnv](https://direnv.net/) configuration for automatic venv activation
+
+### Common commands
 
 ```sh
-uv sync
+uv add PACKAGE      # Add dependency
+uv sync             # Install from lockfile
+uv run script.py    # Run script in virtual environment
 ```
 
-If you want to add the local project package and keep it editable, use `uv add -e` command.
+See [Python environment setup](https://yyahn.com/wiki/Python/Environment%20setup/) for details.
 
-```sh
-uv add . --editable
-```
+## Linting and formatting
+
+[ruff](https://docs.astral.sh/ruff/) is included as a dev dependency. VS Code settings (`.vscode/settings.json`) enable format on save.
