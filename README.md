@@ -14,6 +14,7 @@ This template contains the following folders and files. See `README.md` in each 
 1. `notebooks` for (timestamped) experiment notebooks.
 1. `paper` for manuscripts.
 1. `results` for results (figures, tables, etc.)
+1. `notes` for research notes.
 1. `workflow` for workflow files and scripts.
 1. `.gitignore` for temporary and binary files to be ignored by git (LaTeX, Python, Jupyter, data files, etc.)
 

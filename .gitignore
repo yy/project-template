@@ -37,6 +37,11 @@ workflow/config.yaml
 # Virtual environment
 .venv/
 
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/*/data.json
+
 # Others
 .DS_Store
 *.un~
