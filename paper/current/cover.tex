@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+\usepackage[top=0.5in, bottom=0.5in, left=0.85in, right=0.85in, includefoot, footskip=20pt]{geometry}
+\usepackage{afterpage}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{transparent}
+\usepackage{url}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{array}
+\usepackage{enumitem}
+
+% TODO: Define your institutional colors
+\definecolor{accentcolor}{RGB}{0,120,174}
+\definecolor{secondarycolor}{RGB}{128,128,128}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% TODO: Replace with your institution's logo
+\begin{minipage}[t]{\textwidth}
+  \hspace*{-0.40in}
+  \IfFileExists{institution-logo.pdf}{%
+    \transparent{0.5}\includegraphics[height=0.8in]{institution-logo.pdf}%
+  }{%
+    \fcolorbox{secondarycolor}{white}{\parbox[c][0.7in][c]{2in}{\centering\color{secondarycolor}\footnotesize [Institution Logo]}}%
+  }
+\end{minipage}
+
+% TODO: Replace with your contact information
+\begingroup
+\hfill
+\color{secondarycolor}
+\begin{tabular}{@{}r@{\hspace{0.5in}}r@{}}
+  \footnotesize 123 University Ave. & \footnotesize \textbf{P} 000.000.0000\\
+  \footnotesize Suite 100 & \texttt{your.email@institution.edu} \\
+  \footnotesize City, ST 00000 & \footnotesize \textcolor{accentcolor}{www.institution.edu}
+\end{tabular}
+\endgroup
+
+\vspace{0.2in}
+
+\today{}
+
+\vspace{0.1in}
+
+Dear Editors,
+
+% TODO: Replace with your manuscript title, journal name, and key contribution
+We are pleased to submit our manuscript, ``Your Manuscript Title Here,'' for consideration in the \textit{Journal Name}. Our key contribution is [describe the most important contribution of this work].
+
+% TODO: Background and motivation
+This paragraph should describe the broader context and motivation for your work. Cite relevant foundational literature to establish why this area of research is important.
+
+% TODO: Research gap and findings
+This paragraph should identify the specific gap your work addresses and summarize your main findings. Describe what existing studies have not examined and how your work fills that gap.
+
+% TODO: Relevance to the journal
+These contributions align with the journal's emphasis on [relevant topics] and should interest researchers studying [relevant fields].
+
+% TODO: Replace with your suggested reviewers
+We would like to suggest the following experts as potential referees for our manuscript:
+
+\begin{enumerate}[itemsep=0pt, topsep=2pt]
+    \item Reviewer One (\texttt{reviewer1@university.edu}), Title, University One
+    \item Reviewer Two (\texttt{reviewer2@university.edu}), Title, University Two
+    \item Reviewer Three (\texttt{reviewer3@university.edu}), Title, University Three
+\end{enumerate}
+
+% TODO (optional): List any reviewers to exclude and the reason (e.g., conflict of interest). Remove if not needed.
+We would prefer that [Name, Affiliation] not be selected as a reviewer due to [reason, e.g., a conflict of interest].
+
+We look forward to hearing from you.
+
+\medskip
+
+% TODO: Replace with your information
+\begin{tabular}{ @{} l }
+Sincerely yours,\\[0.5ex]
+\IfFileExists{signature.pdf}{%
+  \includegraphics[height=0.5in]{signature.pdf}\\[0.5ex]%
+}{%
+  \fcolorbox{secondarycolor}{white}{\parbox[c][0.4in][c]{1.5in}{\centering\color{secondarycolor}\footnotesize [Signature]}}\\[0.5ex]%
+}
+Your Name\\
+Your Title \\
+Department\\
+Institution\\
+\end{tabular}
+
+\end{document}
