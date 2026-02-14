@@ -42,6 +42,9 @@ workflow/config.yaml
 .obsidian/workspace-mobile.json
 .obsidian/plugins/*/data.json
 
+# Claude Code
+.claude/
+
 # Others
 .DS_Store
 *.un~
