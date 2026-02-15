@@ -1,24 +1,33 @@
 from os.path import join as pjoin
 
-# You can use config file to set various variables including parameters
-# instead defining everything here.
-#
-# configfile: "config.yaml"   # uncomment to use config file.
+configfile: "config.yaml"
 
-DATA_DIR = "../data/"
+DATA_DIR = config.get("data_dir", "../data/")
 RAW_DATA_DIR = pjoin(DATA_DIR, "raw")
 DERIVED_DATA_DIR = pjoin(DATA_DIR, "derived")
+RESULTS_DIR = "../results/"
 
-"""
+
 rule all:
     input:
-        FIG1
+        pjoin(RESULTS_DIR, "summary.txt"),
 
-rule figure1:
+
+rule process_data:
+    """Example rule: process raw data into a derived dataset."""
     input:
-        SOME_DATASET
+        pjoin(RAW_DATA_DIR, "{dataset}.csv"),
     output:
-        FIG1
+        pjoin(DERIVED_DATA_DIR, "{dataset}.processed.csv"),
     shell:
-        "python scripts/plot_fig1.py {input} {output}"
-"""
+        "python scripts/process_data.py {input} {output}"
+
+
+rule summarize:
+    """Example rule: generate a summary from processed data."""
+    input:
+        pjoin(DERIVED_DATA_DIR, "example.processed.csv"),
+    output:
+        pjoin(RESULTS_DIR, "summary.txt"),
+    shell:
+        "python scripts/summarize.py {input} {output}"
