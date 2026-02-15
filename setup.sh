@@ -42,6 +42,23 @@ if [[ $error -eq 1 ]]; then
 fi
 
 echo
-echo "All dependencies installed. Run:"
-echo "  uv sync        # Install Python packages"
-echo "  direnv allow   # Enable automatic venv activation"
+echo "All prerequisites found. Setting up project..."
+
+# Install Python packages
+uv sync
+echo "[OK] Python packages installed"
+
+# Copy workflow config template if it doesn't exist yet
+if [[ ! -f workflow/config.yaml ]]; then
+    cp workflow/config.template.yaml workflow/config.yaml
+    echo "[OK] Created workflow/config.yaml from template (edit as needed)"
+else
+    echo "[OK] workflow/config.yaml already exists"
+fi
+
+# Install pre-commit hooks
+uv run pre-commit install
+echo "[OK] Pre-commit hooks installed"
+
+echo
+echo "Setup complete. Run 'direnv allow' to enable automatic venv activation."
