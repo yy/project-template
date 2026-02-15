@@ -1,6 +1,4 @@
-PROJ_NAME=PROJ_NAME
-
-.PHONY: all dryrun test
+.PHONY: all dryrun test lint format
 
 all:
 	snakemake --cores all -r -p
@@ -13,3 +11,9 @@ dag.svg: workflow/Snakefile
 
 test:
 	uv run pytest
+
+lint:
+	uv run ruff check .
+
+format:
+	uv run ruff format .

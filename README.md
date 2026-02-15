@@ -46,7 +46,7 @@ See [Python environment setup](https://yyahn.com/wiki/Python/Environment%20setup
 
 ## Linting and formatting
 
-[ruff](https://docs.astral.sh/ruff/) is included as a dev dependency. VS Code settings (`.vscode/settings.json`) enable format on save.
+[ruff](https://docs.astral.sh/ruff/) is included as a dev dependency. Use `make lint` to check for issues and `make format` to auto-format.
 
 ### Pre-commit hooks
 
@@ -63,9 +63,9 @@ Use the following instructions to initialize.
 
 Commands:
 - `uv sync` — install dependencies
-- `uv run pytest` — run tests
-- `uv run ruff check .` — lint
-- `uv run ruff format .` — format
+- `make test` — run tests
+- `make lint` — lint
+- `make format` — format
 - `make all` — run Snakemake pipeline
 
 Conventions:
