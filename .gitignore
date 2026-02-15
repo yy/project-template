@@ -12,6 +12,7 @@
 *.run.xml
 main.pdf
 supp.pdf
+cover.pdf
 *.log
 
 # Data files
