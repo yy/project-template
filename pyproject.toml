@@ -14,10 +14,14 @@ build-backend = "hatchling.build"
 packages = ["src/project_name"]
 
 [dependency-groups]
-dev = ["ruff"]
+dev = ["ruff", "pytest", "pytest-cov", "pre-commit"]
 
 [tool.ruff]
 line-length = 88
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=project_name --cov-report=term-missing -q"
