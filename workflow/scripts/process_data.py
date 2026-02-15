@@ -11,7 +11,10 @@ import sys
 
 
 def main(input_path: str, output_path: str) -> None:
-    with open(input_path, newline="") as fin, open(output_path, "w", newline="") as fout:
+    with (
+        open(input_path, newline="") as fin,
+        open(output_path, "w", newline="") as fout,
+    ):
         reader = csv.DictReader(fin)
         assert reader.fieldnames is not None
         writer = csv.DictWriter(fout, fieldnames=reader.fieldnames)
