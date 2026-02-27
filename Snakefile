@@ -3,8 +3,7 @@ from os.path import join as j
 configfile: "workflow/config.yaml"
 
 # Import utilities
-include: "../workflow_utils.smk"
-include: "workflow_utils.smk"
+include: "workflow/workflow_utils.smk"
 
 #EMB_DIR = j(DATA_DIR, "{data}", "embeddings")
 #emb_params ={
