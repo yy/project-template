@@ -1,4 +1,5 @@
 Keep the current version of the paper in the `current` folder. 
+If you are preparing a submission to a specific journal, you can name the folder as `current-JOURNALNAME`. 
 When you submit, archive the version by creating a folder with a timestamped folder, e.g. `20200202_nature`. 
 
 Start writing early. 
