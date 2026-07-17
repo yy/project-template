@@ -2,9 +2,9 @@
 
 ## General guidelines
 
-This is the folder for storing raw & derived datasets. However, because git is not designed for storing large files, do not commit large datasets to the git repository. Instead, you can use symlinked folder or [git-lfs](https://git-lfs.github.com/) to store and version-controle large files. 
+This is the folder for storing raw & derived datasets. However, because git is not designed for storing large files, do not commit large datasets to the git repository. Instead, you can use a symlinked folder or [Git LFS](https://git-lfs.github.com/) to store and version-control large files.
 
-By default, `.gitignore` specifies to ignore `.csv`, `.tsv`, and `.txt` files. Add more patterns to ignore other data files. 
+By default, `.gitignore` excludes generated files under `data/derived/` and `data/interim/`. Raw data is not ignored automatically; add project-specific rules for large or sensitive files.
 
 Follow one of the following:
 
@@ -57,5 +57,3 @@ The first point is to ensure the most basic data provenance. Imagine receiving a
 Way too often, we have to _guess_ what each column means and how they were collected. This is a recipe for disaster. A dataset without documentation is a ticking time bomb and you should treat them as unusable.
 
 Whenever possible, make sure that the raw data files are versioned and **read-only**. 
-
-

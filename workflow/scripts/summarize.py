@@ -8,6 +8,7 @@ Replace this with your own analysis/summarization logic.
 
 import csv
 import sys
+from pathlib import Path
 
 
 def main(input_path: str, output_path: str) -> None:
@@ -15,6 +16,7 @@ def main(input_path: str, output_path: str) -> None:
         reader = csv.DictReader(fin)
         rows = list(reader)
 
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w") as fout:
         fout.write(f"Total rows: {len(rows)}\n")
         if rows:

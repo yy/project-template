@@ -8,9 +8,11 @@ Replace this with your own data-processing logic.
 
 import csv
 import sys
+from pathlib import Path
 
 
 def main(input_path: str, output_path: str) -> None:
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     with (
         open(input_path, newline="") as fin,
         open(output_path, "w", newline="") as fout,

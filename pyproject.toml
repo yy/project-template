@@ -14,7 +14,7 @@ build-backend = "hatchling.build"
 packages = ["src/project_name"]
 
 [dependency-groups]
-dev = ["ruff", "pytest", "pytest-cov", "pre-commit"]
+dev = ["pre-commit", "pytest", "pytest-cov", "ruff", "snakemake"]
 
 [tool.ruff]
 line-length = 88

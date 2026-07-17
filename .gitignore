@@ -15,10 +15,11 @@ supp.pdf
 cover.pdf
 *.log
 
-# Data files
-*.csv
-*.tsv
-*.txt
+# Generated project data and example outputs
+data/derived/
+data/interim/
+models/trained/
+results/summary.txt
 
 # Office files
 *.docx
@@ -33,7 +34,9 @@ cover.pdf
 
 # Snakemake
 .snakemake
-workflow/config.yaml
+
+# Generated dashboard
+dashboard/index.html
 
 # Virtual environment
 .venv/

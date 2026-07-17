@@ -7,7 +7,7 @@ Uses [Snakemake](https://snakemake.readthedocs.io/) for reproducible pipelines.
 ```
 workflow/
 ├── Snakefile            # Main workflow definition
-├── config.template.yaml # Copy to config.yaml and customize
+├── config.yaml          # Project paths and parameters
 ├── scripts/             # Python scripts called by Snakemake
 └── logs/                # Workflow logs (gitignored)
 ```
@@ -21,8 +21,9 @@ make all       # Run the full pipeline
 
 Or directly:
 ```
-snakemake -n -r -p          # Dry run
-snakemake --cores all -r -p # Run with all cores
+cd workflow
+uv run snakemake --dry-run
+uv run snakemake --cores all
 ```
 
 ## Tips

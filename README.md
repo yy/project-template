@@ -16,7 +16,8 @@ This template contains the following folders and files. See `README.md` in each 
 1. `results` for results (figures, tables, etc.)
 1. `notes` for research notes.
 1. `workflow` for workflow files and scripts.
-1. `.gitignore` for temporary and binary files to be ignored by git (LaTeX, Python, Jupyter, data files, etc.)
+1. `dashboard` for the local project status and ownership view.
+1. `.gitignore` for temporary and generated files.
 
 ## Python environment
 
@@ -32,7 +33,7 @@ This template uses [uv](https://docs.astral.sh/uv/) for Python environment manag
 - `.venv/` — virtual environment directory (created by uv)
 - `pyproject.toml` — project metadata and dependency declarations
 - `uv.lock` — reproducible dependency snapshot (commit to version control)
-- `.envrc` — [direnv](https://direnv.net/) configuration for automatic venv activation
+- `.envrc` — optional [direnv](https://direnv.net/) configuration
 
 ### Common commands
 
@@ -50,33 +51,20 @@ See [Python environment setup](https://yyahn.com/wiki/Python/Environment%20setup
 
 ### Pre-commit hooks
 
-Install hooks to auto-run ruff and tests before commits:
+The setup script installs hooks when Git is using the repository's standard hook directory.
+To run every hook manually:
 
 ```sh
-uv add --dev pre-commit
-uv run pre-commit install
+uv run pre-commit run --all-files
 ```
 
-## For AI coding agents
+## Common project commands
 
-Use the following instructions to initialize. 
-
-Commands:
-- `uv sync` — install dependencies
-- `make test` — run tests
-- `make lint` — lint
-- `make format` — format
-- `make all` — run Snakemake pipeline
-- `make dashboard` — regenerate the project status dashboard
-
-Conventions:
-- Write clean code accompanied by well-designed tests. 
-- Use type hints for all function signatures. 
-- Import project code as `from project_name import ...`. 
-- Put reusable code in `src/`, not in notebooks or workflow scripts. 
-- Timestamp experiment folders: `YYYYMMDD_description`. 
+- `make check` — run formatting, linting, tests, and a workflow dry run
+- `make all` — run the example Snakemake pipeline
+- `make dashboard` — regenerate the local project status dashboard
 
 ## Project dashboard
 
-Update `dashboard/status.toml` after meaningful project work, then run
-`make dashboard` to regenerate the local status dashboard.
+Update `dashboard/status.toml` after meaningful project work, then run `make dashboard` and open `dashboard/index.html`.
+The HTML file is generated locally and is not committed.

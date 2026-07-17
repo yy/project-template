@@ -1,13 +1,10 @@
-.PHONY: all dryrun test lint format dashboard
+.PHONY: all dryrun test lint format format-check dashboard check
 
 all:
-	snakemake --cores all -r -p
+	cd workflow && uv run snakemake --cores all --printshellcmds
 
 dryrun:
-	snakemake -n -r -p
-
-dag.svg: workflow/Snakefile
-	snakemake --dag | dot -Tsvg > dag.svg
+	cd workflow && uv run snakemake --dry-run --printshellcmds
 
 test:
 	uv run pytest
@@ -18,5 +15,10 @@ lint:
 format:
 	uv run ruff format .
 
+format-check:
+	uv run ruff format --check .
+
 dashboard:
 	uv run python dashboard/build.py
+
+check: lint format-check test dryrun

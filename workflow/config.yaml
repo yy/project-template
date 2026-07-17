@@ -1,0 +1,2 @@
+# Project paths are relative to the workflow directory.
+data_dir: "../data/"

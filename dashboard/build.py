@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+import argparse
 import html
 import tomllib
 from pathlib import Path
-from typing import TypedDict
+from typing import TypedDict, cast
 
 
 class Workstream(TypedDict):
@@ -112,11 +113,22 @@ def render_dashboard(data: DashboardStatus) -> str:
 """
 
 
+def load_status(path: Path) -> DashboardStatus:
+    with path.open("rb") as status_file:
+        return cast(DashboardStatus, tomllib.load(status_file))
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Build the project dashboard.")
+    parser.add_argument("--status", type=Path, default=STATUS_PATH)
+    parser.add_argument("--output", type=Path, default=OUTPUT_PATH)
+    return parser.parse_args()
+
+
 def main() -> None:
-    with STATUS_PATH.open("rb") as status_file:
-        data: DashboardStatus = tomllib.load(status_file)  # type: ignore[assignment]
-    OUTPUT_PATH.write_text(render_dashboard(data), encoding="utf-8")
-    print(f"Wrote {OUTPUT_PATH}")
+    args = parse_args()
+    args.output.write_text(render_dashboard(load_status(args.status)), encoding="utf-8")
+    print(f"Wrote {args.output}")
 
 
 if __name__ == "__main__":
