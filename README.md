@@ -67,6 +67,7 @@ Commands:
 - `make lint` — lint
 - `make format` — format
 - `make all` — run Snakemake pipeline
+- `make dashboard` — regenerate the project status dashboard
 
 Conventions:
 - Write clean code accompanied by well-designed tests. 
@@ -74,3 +75,8 @@ Conventions:
 - Import project code as `from project_name import ...`. 
 - Put reusable code in `src/`, not in notebooks or workflow scripts. 
 - Timestamp experiment folders: `YYYYMMDD_description`. 
+
+## Project dashboard
+
+Update `dashboard/status.toml` after meaningful project work, then run
+`make dashboard` to regenerate the local status dashboard.

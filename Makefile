@@ -1,4 +1,4 @@
-.PHONY: all dryrun test lint format
+.PHONY: all dryrun test lint format dashboard
 
 all:
 	snakemake --cores all -r -p
@@ -17,3 +17,6 @@ lint:
 
 format:
 	uv run ruff format .
+
+dashboard:
+	uv run python dashboard/build.py

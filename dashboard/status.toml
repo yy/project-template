@@ -1,0 +1,22 @@
+# Agents: update this file after meaningful project work, then run `make dashboard`.
+project = "Project name"
+updated = "Not yet updated"
+summary = "Replace this with a one-sentence summary of the project's current state."
+
+[[workstreams]]
+name = "Data"
+status = "Not started"
+owner = "Unassigned"
+next_action = "Define the first data milestone"
+
+[[workstreams]]
+name = "Analysis"
+status = "Not started"
+owner = "Unassigned"
+next_action = "Define the first analysis milestone"
+
+[[workstreams]]
+name = "Paper"
+status = "Not started"
+owner = "Unassigned"
+next_action = "Define the first writing milestone"
