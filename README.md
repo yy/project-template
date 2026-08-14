@@ -61,7 +61,9 @@ uv run pre-commit run --all-files
 ## Common project commands
 
 - `make check` — run formatting, linting, tests, and a workflow dry run
-- `make all` — run the example Snakemake pipeline
+- `make all` — run the full Snakemake pipeline through `paper/current/main.pdf`
+- `make paper` — build the main paper without running the analysis
+- `make monitor` — continuously rebuild the main paper while editing
 - `make dashboard` — regenerate the local project status dashboard
 
 ## Project dashboard

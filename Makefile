@@ -1,10 +1,16 @@
-.PHONY: all dryrun test lint format format-check dashboard check
+.PHONY: all dryrun paper monitor test lint format format-check dashboard check
 
 all:
 	cd workflow && uv run snakemake --cores all --printshellcmds
 
 dryrun:
 	cd workflow && uv run snakemake --dry-run --printshellcmds
+
+paper:
+	$(MAKE) -C paper/current main
+
+monitor:
+	$(MAKE) -C paper/current monitor
 
 test:
 	uv run pytest

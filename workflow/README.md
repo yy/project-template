@@ -16,7 +16,7 @@ workflow/
 
 ```
 make dryrun    # Preview what will run
-make all       # Run the full pipeline
+make all       # Run the full pipeline through paper/current/main.pdf
 ```
 
 Or directly:
@@ -31,3 +31,4 @@ uv run snakemake --cores all
 - Import from `src/project_name` in scripts for shared code
 - Use `config.yaml` for paths and parameters
 - Keep scripts focused; one script per output
+- Declare generated figures and tables explicitly as inputs to the paper rule
