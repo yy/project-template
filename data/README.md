@@ -28,7 +28,7 @@ The most basic structure may look like this:
 ```
 ├── data
 │   ├── raw         <- The original, immutable, primary data dump.
-│   ├── additional  <- Various auxiliary data.
+│   ├── external    <- Various auxiliary external data.
 │   ├── derived     <- All data derived from the raw & additionaldata.
 ```
 
