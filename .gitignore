@@ -41,6 +41,9 @@ dashboard/index.html
 # Virtual environment
 .venv/
 
+# Template only; remove this rule and commit the lockfile in a real project.
+/uv.lock
+
 # Obsidian
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json

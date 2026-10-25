@@ -27,6 +27,7 @@ tests/
 ```python
 from project_name import data
 
+
 def test_load_data():
     result = data.load("sample.csv")
     assert result is not None

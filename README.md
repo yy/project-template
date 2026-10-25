@@ -32,16 +32,19 @@ This template uses [uv](https://docs.astral.sh/uv/) for Python environment manag
 - `.python-version` — specifies the required Python release
 - `.venv/` — virtual environment directory (created by uv)
 - `pyproject.toml` — project metadata and dependency declarations
-- `uv.lock` — reproducible dependency snapshot (commit to version control)
+- `uv.lock` — generated dependency snapshot; ignored in this template
 - `.envrc` — optional [direnv](https://direnv.net/) configuration
 
 ### Common commands
 
 ```sh
 uv add PACKAGE      # Add dependency
-uv sync             # Install from lockfile
+uv sync             # Resolve dependencies and install; creates uv.lock if missing
 uv run script.py    # Run script in virtual environment
 ```
+
+When starting a research project, remove `/uv.lock` from `.gitignore` and commit the generated lockfile for reproducible installs.
+The template resolves dependencies afresh in CI, so dependency changes can affect its checks.
 
 See [Python environment setup](https://yyahn.com/wiki/Python/Environment%20setup/) for details.
 
