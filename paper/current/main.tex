@@ -24,6 +24,10 @@
 
 \usepackage{url}
 
+% Every number the text cites, as a command (\nExampleRows), rendered from
+% results/numbers.csv by the workflow; never type a computed number into the text.
+\input{../../results/numbers}
+
 \newcommand{\secref}[1]{Section~\ref{sec:#1}}
 \newcommand{\figref}[1]{Fig.~\ref{fig:#1}}
 \newcommand{\tabref}[1]{Table~\ref{tab:#1}}
@@ -56,6 +60,8 @@
 %}}}
 
 \section{Results}\label{sec:results} %{{{ 
+
+The example dataset has \nExampleRows{} rows, with values summing to \exampleValueTotal{}.
 
 
 %}}}
