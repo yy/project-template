@@ -5,6 +5,7 @@ The local `Makefile` uses Latexmk for fast standalone paper builds:
 ```sh
 make main          # Build the main paper once
 make monitor       # Rebuild the main paper after each source change
+make check         # Build the main paper into build-check/, leaving a running monitor alone
 make supp          # Build the supplement
 make cover         # Build the cover document
 make clean         # Remove generated LaTeX files

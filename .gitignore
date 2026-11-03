@@ -11,6 +11,7 @@
 *.out
 *.run.xml
 main.pdf
+build-check/
 supp.pdf
 cover.pdf
 *.log
