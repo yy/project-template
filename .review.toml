@@ -22,6 +22,14 @@
 # Open items also space reviews out: with k open, the next one waits at least 2^k days.
 # max_open = 4
 
+# true turns on the full mock-review panel: 5–7 reviewer agents and a meta-review
+# that updates mock-review/TRACKER.md. Costly; runs only from the drafting stage on.
+# mock_review = false
+
+# With mock_review on, run another panel once this share of the manuscript's lines
+# has changed since the last one. At most one panel a day.
+# mock_min_churn = 0.02
+
 # Files each review aspect covers. This template's layout already matches the
 # defaults, so add [paths] only if you move code elsewhere, e.g.
 # [paths]
