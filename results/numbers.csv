@@ -1,0 +1,3 @@
+name,value,format,source,description
+nExampleRows,2,",.0f",data/derived/example.processed.csv,rows in the example data
+exampleValueTotal,3,",.0f",data/derived/example.processed.csv,sum of the value column

@@ -7,6 +7,8 @@ RAW_DATA_DIR = pjoin(DATA_DIR, "raw")
 DERIVED_DATA_DIR = pjoin(DATA_DIR, "derived")
 RESULTS_DIR = "../results/"
 SUMMARY_PATH = pjoin(RESULTS_DIR, "summary.txt")
+NUMBERS_CSV = pjoin(RESULTS_DIR, "numbers.csv")  # every number the paper cites
+NUMBERS_TEX = pjoin(RESULTS_DIR, "numbers.tex")  # the same numbers as LaTeX commands
 
 PAPER_DIR = "../paper/current"
 PAPER_PDF_PATH = pjoin(PAPER_DIR, "main.pdf")
@@ -16,6 +18,7 @@ PAPER_SOURCES = [
 ]
 PAPER_RESULTS = [
     SUMMARY_PATH,
+    NUMBERS_TEX,
 ]
 
 
@@ -56,3 +59,23 @@ rule summarize:
         SUMMARY_PATH,
     shell:
         "python scripts/summarize.py {input} {output}"
+
+
+rule paper_numbers:
+    """Collect the numbers the paper cites from the workflow's outputs."""
+    input:
+        processed=pjoin(DERIVED_DATA_DIR, "example.processed.csv"),
+    output:
+        NUMBERS_CSV,
+    shell:
+        "python scripts/paper_numbers.py {input.processed} {output}"
+
+
+rule numbers_tex:
+    """Render the numbers table as LaTeX commands for the paper."""
+    input:
+        NUMBERS_CSV,
+    output:
+        NUMBERS_TEX,
+    shell:
+        "python -m project_name.paper_numbers {input} {output}"
