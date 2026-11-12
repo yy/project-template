@@ -18,7 +18,6 @@ This template contains the following folders and files. See `README.md` in each 
 1. `workflow` for workflow files and scripts.
 1. `dashboard` for the local project status and ownership view.
 1. `.gitignore` for temporary and generated files.
-1. `.review.toml` for the lab's automated review settings (all commented out, so lab defaults apply).
 
 ## Python environment
 
